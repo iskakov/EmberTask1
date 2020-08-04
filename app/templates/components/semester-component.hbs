@@ -1,0 +1,13 @@
+{{#each semesters as |semester|}}
+    <button value="{{semester}}" {{action "test" semester}}>
+        <p>{{semester.name}}</p>
+        <p>{{semester.dateBeg}}</p>
+        <p>{{semester.dateEnd}}</p>
+        {{#each semester.listEdu as |item|}}
+            <p>{{item.title}}</p>
+        {{/each}}
+    </button>
+    
+{{/each}}
+
+{{yield}}
