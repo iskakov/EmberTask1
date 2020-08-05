@@ -1,9 +1,10 @@
 <h2 class="title">Лабораторная работа №1 по Ember </h2>
 
 <div class="left">
-    {{semester-component action = "getEduProgr" model = model}}
+    {{semester-component action = "getEduProgr" model = semesters}}
 </div>
 <div class="rigth">
-    {{edu-progr-component list = listEduProgr}}
+    {{edu-progr-component listEdu = listEdu}}
 </div>
+
 {{outlet}}

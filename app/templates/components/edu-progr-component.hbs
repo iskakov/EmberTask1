@@ -1,10 +1,10 @@
-{{#each-in listEduProgr as |eduProgr index|}}
+{{#each listEdu as |eduProgr|}}
     <div>
         <p>{{eduProgr.title}}</p>
     </div>
 {{else}}
     <p>Nothing to show</p>
-{{/each-in}}
+{{/each}}
 
 
 {{yield}}

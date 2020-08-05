@@ -1,9 +1,9 @@
 import Ember from 'ember';
 
-const {set} = Ember;
+const {set, get} = Ember;
 
 export default Ember.Route.extend({
-    listEduProgr:null,
+    listEdu : null,
     model(){
         let sem = this.store.createRecord('semester',{
             name: 'this is a test Name semester',
@@ -35,24 +35,20 @@ export default Ember.Route.extend({
             sort : 0,
             semester: sem1
         });
-        // edu.save();
-        // edu1.save();
-        // edu2.save();
-        
-        //let list = this.store.findAll('edu-progr');
-        
-        
         return this.store.findAll('semester');
+    },
+    setupController(controller, model){
+        set(controller, 'semesters', model);
+        set(controller, 'listEdu', null);
+        console.log('this is a model222');
     },
     actions: {
         getEduProgr(selSemester){
-            if(selSemester != null){
-                this.set('listEduProgr',this.selSemester.get("listEdu") );
-                console.log(this.listEduProgr);
-                this.selSemester.get("listEdu").forEach(element => {
-                    console.log(element);
-                });
+            if(selSemester !== null){
+                console.log(get(this, 'listEdu'));
+                set(this.controller, 'listEdu', selSemester.get('listEdu'));
+                console.log(get(this, 'listEdu'));
             }
         }
-    }
+    } 
 });

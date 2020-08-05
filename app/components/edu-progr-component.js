@@ -1,16 +1,16 @@
 import Ember from 'ember';
 const {get,set} = Ember;
 export default Ember.Component.extend({
-    listEduProgr: null,
+    listEdu:null,
     didReceiveAttrs(){
         this._super(...arguments);
-        let selSemestr = get(this, 'list');
-
-        set(this, 'listEduProgr', selSemestr);
+        let listEdu = get(this, 'listEdu');
+        console.log(listEdu);
+        set(this, 'listEdu', listEdu);
     },
-    didUpdateAttrs() {
+    
+    didUpdateAttrs(){
         this._super(...arguments);
-       
-        
-      },
+        console.log('update');
+    }
 });
