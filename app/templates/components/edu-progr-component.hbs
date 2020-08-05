@@ -1,10 +1,14 @@
-{{#each listEdu as |eduProgr|}}
-    <div>
-        <p>{{eduProgr.title}}</p>
-    </div>
-{{else}}
-    <p>Nothing to show</p>
-{{/each}}
+<h4>Список образовательных программ:</h4>
+<div class="list">
+    {{#each listEdu as |eduProgr|}}
+        <div class="edu">
+            <p>{{eduProgr.title}}</p>
+            <p>{{eduProgr.desc}}</p>
+        </div>
+    {{else}}
+        <p>Nothing to show</p>
+    {{/each}}
+</div>
 
 
 {{yield}}

@@ -1,11 +1,9 @@
+<h4>Список семестров:</h4>
 {{#each semesters as |semester|}}
     <button value="{{semester}}" {{action "test" semester}}>
         <p>{{semester.name}}</p>
-        <p>{{semester.dateBeg}}</p>
-        <p>{{semester.dateEnd}}</p>
-        {{#each semester.listEdu as |item|}}
-            <p>{{item.title}}</p>
-        {{/each}}
+        <p>{{date-format semester.dateBeg}}</p>
+        <p>{{date-format semester.dateEnd}}</p>
     </button>
     
 {{/each}}
