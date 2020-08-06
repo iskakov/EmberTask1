@@ -10,7 +10,7 @@ export default Ember.Route.extend({
         for(let i = 0; i<8; i++){
             let dateBeg = "";
             let dateEnd = "";
-            if(i%2 == 0){
+            if(i%2 === 0){
                 dateBeg += year + "-09-01T00:00:00";
                 dateEnd += year + "-12-30T00:00:00";
             }
@@ -29,7 +29,7 @@ export default Ember.Route.extend({
              {
                 title: 'Алгебра',
                 desc: 'Круто',
-                sort : 0,
+                sort : 2,
                 semester: sems[0]
              },
              {
@@ -197,10 +197,12 @@ export default Ember.Route.extend({
     actions: {
         getEduProgr(selSemester){
             if(selSemester !== null){
-                console.log(get(this, 'listEdu'));
-                set(this.controller, 'listEdu', selSemester.get('listEdu'));
-                console.log(get(this, 'listEdu'));
+                set(this.controller, 'listEdu', selSemester.get('sortedItems'));
             }
+        },
+        dropped(data, event){
+            console.log(data);
+            console.log(event);
         }
     } 
 });

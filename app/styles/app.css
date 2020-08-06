@@ -50,7 +50,7 @@
     margin: 0px 10px 10px 10px;
     border: 1px solid black;
 }
-.content .rigth .ember-view {
+.content .rigth .cont {
     width: 970px;
     display: block;
     float: left;
@@ -82,6 +82,7 @@
 .content .rigth .list{
     display: flex;
     flex-direction: row;
+    min-height: 100px;
     margin: 10px;
     border: 1px solid black;
 }
@@ -92,6 +93,8 @@
     align-items: center;
     margin: 10px;
     padding: 10px;
+    width: 130px;
+    height: 50px;
     border: 1px solid black;
 }
 

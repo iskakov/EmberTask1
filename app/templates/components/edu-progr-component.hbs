@@ -1,14 +1,22 @@
 <h4>Список образовательных программ:</h4>
-<div class="list">
-    {{#each listEdu as |eduProgr|}}
-        <div class="edu">
-            <p>{{eduProgr.title}}</p>
-            <p>{{eduProgr.desc}}</p>
-        </div>
-    {{else}}
-        <p>Nothing to show</p>
-    {{/each}}
-</div>
+{{#dropzone-component action = "dropped"}}
+{{#each listEdu as |eduProgr|}}
+            {{#edu-component  content=eduProgr}}
+                <p>{{eduProgr.title}}</p>
+                <p>{{eduProgr.desc}}</p>
+            {{/edu-component}}
+        {{else}}
+            <p>Nothing to show</p>
+        {{/each}}
+
+{{/dropzone-component}}
+        
+
+
+
 
 
 {{yield}}
+
+
+

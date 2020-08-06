@@ -7,5 +7,12 @@ export default DS.Model.extend({
     dateBeg : attr('date'),
     dateEnd : attr('date'),
 
-    listEdu : hasMany('edu-progr')
+    listEdu : hasMany('edu-progr'),
+    sortedItems: function () {
+        var items = this.get('listEdu').toArray();
+        console.log(items);
+        return items.sort(function (lhs, rhs) {
+          return lhs.get('sort') - rhs.get('sort');
+        });
+      }.property('isLoaded', 'sortedItems','listEdu.@each.isLoaded')
 });
