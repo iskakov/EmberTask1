@@ -7,7 +7,6 @@ export default Ember.Component.extend({
     didReceiveAttrs(){
         this._super(...arguments);
         let semesters = get(this, 'model');
-        console.log(semesters);
         set(this, 'semesters', semesters); 
     },
     actions:{

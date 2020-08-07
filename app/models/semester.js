@@ -14,5 +14,5 @@ export default DS.Model.extend({
         return items.sort(function (lhs, rhs) {
           return lhs.get('sort') - rhs.get('sort');
         });
-      }.property('isLoaded', 'sortedItems','listEdu.@each.isLoaded')
+      }.property('listEdu.@each.isLoaded')
 });
