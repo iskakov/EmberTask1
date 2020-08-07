@@ -25,26 +25,83 @@
 /* content */
 .content{
     width: 1160px;
+    height: 580px;
     background-color: white;
 }
 
 .content h2{
     margin: 10px;
 }
-
 .content .left {
     float: left;
+}
+.content .rigth {
+    float: left;
+}
+
+
+.content .left .ember-view {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    float: left;
+    align-items: center;
+    margin: 0px 10px 10px 10px;
+    border: 1px solid black;
+}
+.content .rigth .cont {
+    width: 970px;
     display: block;
+    float: left;
+    height: 518px;
+    align-items: center;
+    margin: 0px 10px 10px 0px;
+    border: 1px solid black;
+}
+
+.content .left .ember-view h4,
+.content .rigth .ember-view h4  {
+    margin: 10px;
 }
 .content .left .ember-view button {
-    display: block;
-    margin: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 50px;
+    margin: 0 0 10px 0;
+}
+
+.content .left .ember-view button p,
+.content .rigth .list .edu p{
+   font-size: 12px;
+   margin: 0;
+}
+.content .rigth .list{
+    display: flex;
+    flex-direction: row;
+    min-height: 100px;
+    margin: 10px;
+    border: 1px solid black;
+}
+.content .rigth .list .edu{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    width: 130px;
+    height: 50px;
+    border: 1px solid black;
 }
 
 /* footer */
 .footer{
     min-width: 1160px;
     height: 50px;
-    margin: 500px 0 0 0 ;
+    margin: 10px 0 0 0 ;
     background-color: burlywood;
 }

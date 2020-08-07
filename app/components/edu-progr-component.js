@@ -1,16 +1,31 @@
 import Ember from 'ember';
 const {get,set} = Ember;
 export default Ember.Component.extend({
-    listEduProgr: null,
+    classNames:['cont'],
+    selEdu: null,
+    listEdu:null,
     didReceiveAttrs(){
         this._super(...arguments);
-        let selSemestr = get(this, 'list');
-
-        set(this, 'listEduProgr', selSemestr);
-    },
-    didUpdateAttrs() {
-        this._super(...arguments);
-       
+        let listEdu = get(this, 'listEdu');
+        console.log(listEdu);
         
-      },
+        set(this, 'listEdu', listEdu);
+    },
+    actions:{
+        setEdu(edu){
+            this.selEdu = edu;
+        },
+        left(){
+            if(this.selEdu!=null){
+                console.log('left');
+                this.sendAction('dropLeft', this.selEdu);
+            }
+        },
+        right(){
+            if(this.selEdu!=null){
+                console.log('left');
+                this.sendAction('dropRight', this.selEdu);
+            }
+        }
+    }
 });
