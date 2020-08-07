@@ -3,7 +3,7 @@ import Ember from 'ember';
 const {get,set} = Ember;
 
 export default Ember.Component.extend({
-    semesters: null,
+    tagName : 'scroll',
     didReceiveAttrs(){
         this._super(...arguments);
         let semesters = get(this, 'model');

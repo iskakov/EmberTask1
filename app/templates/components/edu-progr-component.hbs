@@ -1,10 +1,22 @@
-{{#each-in listEduProgr as |eduProgr index|}}
-    <div>
-        <p>{{eduProgr.title}}</p>
-    </div>
-{{else}}
-    <p>Nothing to show</p>
-{{/each-in}}
+<h4>Список образовательных программ:</h4>
+<div class="list"> 
+    {{#each listEdu as |eduProgr|}}
+        <button class="edu" {{action "setEdu" eduProgr}}>
+            <p>{{eduProgr.title}}</p>
+            <p>{{eduProgr.desc}}</p>
+        </button>
+    {{else}}
+        <p>Nothing to show</p>
+    {{/each}}
+
+</div>
 
 
-{{yield}}
+<button {{action "left"}}>left</button>
+<button {{action "right"}}>right</button>
+<button>start</button>
+<button>end</button>
+
+
+
+
